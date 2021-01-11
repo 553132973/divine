@@ -14,50 +14,46 @@ class index extends Component {
       tongQian: [0, 1, 2]
     };
   }
-  // start = () => {
-  //   const { gua } = this.state;
-  //   let left = Math.ceil(Math.random() * 10) - 1;
-  //   let center = Math.ceil(Math.random() * 10) - 1;
-  //   let right = Math.ceil(Math.random() * 10) - 1;
-  //   if (gua.length < 6) {
-  //     let num = [left, center, right];
-  //     // gua.push(this.parityNumber(num));
-  //     this.setState({
-  //       leftCopperCash: left,
-  //       centerCopperCash: center,
-  //       rightCopperCash: right,
-  //       gua: gua
-  //     });
-  //   } else {
-  //     alert("卦象生成");
-  //     console.log(gua);
-  //   }
-  // };
+  start = () => {
+    const { gua } = this.state;
+    let left = Math.ceil(Math.random() * 10) - 1;
+    let center = Math.ceil(Math.random() * 10) - 1;
+    let right = Math.ceil(Math.random() * 10) - 1;
+    if (gua.length < 6) {
+      let num = [left, center, right];
+      gua.push(this.parityNumber(num));
+      this.setState({
+        leftCopperCash: left,
+        centerCopperCash: center,
+        rightCopperCash: right,
+        gua: gua
+      });
+    } else {
+      alert("卦象生成");
+      console.log(gua);
+    }
+  };
 
-  // parityNumber = num => {
-  //   let num2 = [];
-  //   num.filter((e, i, arr) => {
-  //     if (e % 2 === 0) {
-  //       num2.push(e);
-  //     }
-  //   });
-  //   switch (num2.length) {
-  //     case 0:
-  //       return "老阳"; //老阳
-  //       // break;
-  //     case 1:
-  //       return "少阳"; //少阳
-  //       // break;
-  //     case 2:
-  //       return "少阴"; //少阴
-  //       // break;
-  //     case 3:
-  //       return "老阴"; //老阴
-  //       // break;
-  //     default:
-  //       break;
-  //   }
-  // };
+  parityNumber = num => {
+    let num2 = [];
+    num.filter((e, i, arr) => {
+      if (e % 2 === 0) {
+        num2.push(e);
+      }
+    });
+    switch (num2.length) {
+      case 0:
+        return "老阳"; //老阳
+      case 1:
+        return "少阳"; //少阳
+      case 2:
+        return "少阴"; //少阴
+      case 3:
+        return "老阴"; //老阴
+      default:
+        break;
+    }
+  };
   render() {
     const {
       leftCopperCash,
@@ -70,7 +66,7 @@ class index extends Component {
         <div className="topEmpty" />
         <div className="start">
           <div>
-            {/* <button onClick={this.start}>起卦</button> */}
+            <button onClick={this.start}>起卦</button>
           </div>
           <p>起卦时间最好为白天，诚心诚意，心中默念要占卦的事情，点击左侧按钮六次，才能生成卦象</p>
         </div>
