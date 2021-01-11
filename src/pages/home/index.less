@@ -1,6 +1,71 @@
-.home{
-    color:red;
-    width: 100px;
-    height: 100px;
-    background: yellow;
+.eightImg {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-property: -moz-transform;
+  -moz-transition-duration: 1s;
+  -webkit-animation: rotate 10s linear infinite;
+  -moz-animation: rotate 10s linear infinite;
+  -o-animation: rotate 10s linear infinite;
+  animation: rotate 10s linear infinite;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-o-keyframes rotate {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.demo {
+  position: fixed;
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .title {
+    width: 100%;
+    text-align: center;
+    .explain {
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: burlywood;
+    }
+    margin-top: 2rem;
+  }
+  .top {
+    width: 60%;
+  }
+}
+.eight{
+  width:100%;
+  display: flex;
+  justify-content: center;
 }
