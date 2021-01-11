@@ -11,7 +11,6 @@ class index extends Component {
       centerCopperCash: "",
       rightCopperCash: "",
       gua: [],
-      tongQian: [0, 1, 2]
     };
   }
   start = () => {
