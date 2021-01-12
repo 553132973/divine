@@ -14,11 +14,12 @@ class index extends Component {
   }
   componentDidMount() {
     const day = Draw();
-    console.log(day);
   }
-  // getData = () => {};
   render() {
     const day = Draw();
+    if(day){
+      console.log(111);
+    }
     return (
       <div className={"list"}>
         <Title day={day}/>
