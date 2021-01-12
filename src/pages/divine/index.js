@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import yang from "../../images/yang.png";
 import ying from "../../images/ying.png";
+import YangYao from "../../components/yao/yang";
+import YingYao from "../../components/yao/ying";
+// import { originalName as alias } from 'module'
 import "./index.less";
 class index extends Component {
   constructor(props) {
@@ -10,7 +13,7 @@ class index extends Component {
       leftCopperCash: "",
       centerCopperCash: "",
       rightCopperCash: "",
-      gua: [],
+      gua: []
     };
   }
   start = () => {
@@ -119,14 +122,14 @@ class index extends Component {
 }
 
 export default index;
-function YangYao(params) {
-  return <div className={"yangYao"} />;
-}
-function YingYao(params) {
-  return (
-    <div className={"yingYao"}>
-      <div className={"left"} />
-      <div className={"right"} />
-    </div>
-  );
-}
+// function YangYao(params) {
+//   return <div className={"yangYao"} />;
+// }
+// function YingYao(params) {
+//   return (
+//     <div className={"yingYao"}>
+//       <div className={"left"} />
+//       <div className={"right"} />
+//     </div>
+//   );
+// }
