@@ -5,7 +5,7 @@ import ying from "../../images/ying.png";
 import YangYao from "../../components/yao/yang";
 import YingYao from "../../components/yao/ying";
 // import { originalName as alias } from 'module'
-import "./index.less";
+import css from "./index.less";
 class index extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +57,7 @@ class index extends Component {
     }
   };
   render() {
+    console.log(css);
     const {
       leftCopperCash,
       centerCopperCash,
@@ -64,30 +65,30 @@ class index extends Component {
       gua
     } = this.state;
     return (
-      <div className="divine">
-        <div className="topEmpty" />
-        <div className="start">
+      <div className={css.divine}>
+        <div className={css.topEmpty} />
+        <div className={css.start}>
           <div>
             <button onClick={this.start}>起卦</button>
           </div>
           <p>起卦时间最好为白天，诚心诚意，心中默念要占卦的事情，点击左侧按钮六次，才能生成卦象</p>
         </div>
-        <div className={"yaoOrder"}>
+        <div className={css.yaoOrder}>
           <p>
             第{`${gua.length}`}爻
           </p>
         </div>
-        <div className="elephant">
+        <div className={css.elephant}>
           <img src={leftCopperCash % 2 === 0 ? ying : yang} alt="铜钱" />
           <img src={centerCopperCash % 2 === 0 ? ying : yang} alt="铜钱" />
           <img src={rightCopperCash % 2 === 0 ? ying : yang} alt="铜钱" />
         </div>
-        <div className="sixYao">
-          <div className="hexagram">
-            <div className={"benGua"}>
+        <div className={css.sixYao}>
+          <div className={css.hexagram}>
+            <div className={css.benGua}>
               <p>本卦</p>
             </div>
-            <div className={"yao"}>
+            <div className={css.yao}>
               {gua[5] === "老阳" || gua[5] === "少阳" ? <YangYao /> : <YingYao />}
               {gua[4] === "老阳" || gua[4] === "少阳" ? <YangYao /> : <YingYao />}
               {gua[3] === "老阳" || gua[3] === "少阳" ? <YangYao /> : <YingYao />}
@@ -95,15 +96,15 @@ class index extends Component {
               {gua[1] === "老阳" || gua[1] === "少阳" ? <YangYao /> : <YingYao />}
               {gua[0] === "老阳" || gua[0] === "少阳" ? <YangYao /> : <YingYao />}
             </div>
-            <div className={"benCi"}>
+            <div className={css.benCi}>
               <Link to="/list">易</Link>
             </div>
           </div>
-          <div className="change">
-            <div className={"bianGua"}>
+          <div className={css.change}>
+            <div className={css.bianGua}>
               <p>变卦</p>
             </div>
-            <div className={"yao"}>
+            <div className={css.yao}>
               {gua[5] === "老阴" || gua[5] === "少阳" ? <YangYao /> : <YingYao />}
               {gua[4] === "老阴" || gua[4] === "少阳" ? <YangYao /> : <YingYao />}
               {gua[3] === "老阴" || gua[3] === "少阳" ? <YangYao /> : <YingYao />}
@@ -111,7 +112,7 @@ class index extends Component {
               {gua[1] === "老阴" || gua[1] === "少阳" ? <YangYao /> : <YingYao />}
               {gua[0] === "老阴" || gua[0] === "少阳" ? <YangYao /> : <YingYao />}
             </div>
-            <div className={"bianCi"}>
+            <div className={css.bianCi}>
               <Link to="/list">经</Link>
             </div>
           </div>
